@@ -1,21 +1,35 @@
+import { BackgroundCircle } from "../Assets/BackgroundCircle";
 import { Eye } from "../Assets/Eye";
+import { MouthArc } from "../Assets/MouthArc";
+import { FaceContainer } from "../Assets/FaceContainer";
 
-const width = 960;
-const height = 500;
-const centerX = width / 2;
-const centerY = height / 2;
-const strokeWidth = 5;
-
-export const Face = () => (
-  <svg width={width} height={height}>
-    <circle
-      cx={centerX}
-      cy={centerY}
-      r={centerY - strokeWidth / 2}
-      fill="yellow"
-      stroke="black"
+export const Face = ({
+  width,
+  height,
+  centerX,
+  centerY,
+  strokeWidth,
+  eyeOffsetX,
+  eyeOffsetY,
+  eyeRadius,
+  mouthRadius,
+  mouthWidth,
+}) => (
+  <FaceContainer
+    width={width}
+    height={height}
+    centerX={centerX}
+    centerY={centerY}
+  >
+    <BackgroundCircle
+      radius={centerY - strokeWidth / 2}
       strokeWidth={strokeWidth}
-    ></circle>
-    <Eye></Eye>
-  </svg>
+    />
+    <Eye
+      eyeOffsetX={eyeOffsetX}
+      eyeOffsetY={eyeOffsetY}
+      eyeRadius={eyeRadius}
+    />
+    <MouthArc mouthRadius={mouthRadius} mouthWidth={mouthWidth} />
+  </FaceContainer>
 );
