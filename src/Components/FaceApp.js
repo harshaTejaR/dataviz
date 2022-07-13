@@ -1,12 +1,11 @@
-import React from 'react';
-import { range } from 'd3';
-import { Face } from './Face';
+import React from "react";
+import { range } from "d3";
+import { Face } from "./Face";
 
 const width = 160;
 const height = 160;
 
 const array = range(6 * 3);
-
 export const FaceApp = () =>
   array.map(() => (
     <Face
@@ -22,6 +21,3 @@ export const FaceApp = () =>
       mouthRadius={30 + Math.random() * 10}
     />
   ));
-
-// const rootElement = document.getElementById('root');
-// ReactDOM.render(<App />, rootElement);
