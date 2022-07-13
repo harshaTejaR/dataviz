@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import  useLongPress  from "../Assets/ButtonLongPress";
+// import  useLongPress  from "../Assets/ButtonLongPress";
 
 export const ButtonComp = () => {
   const [changeFace, setChangeFace] = useState([]);
@@ -7,12 +7,12 @@ export const ButtonComp = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState("");
 
-  const UseLongPress = useLongPress(onLongPress, onClick, defaultOptions);
+  // const UseLongPress = useLongPress(onLongPress, onClick, defaultOptions);
 
-  const defaultOptions = {
-    shouldPreventDefault: true,
-    delay: 500,
-  };
+  // const defaultOptions = {
+  //   shouldPreventDefault: true,
+  //   delay: 500,
+  // };
 
   return (
     <div className="faceChanger">
@@ -49,8 +49,8 @@ export const ButtonComp = () => {
           <p>
             {/* if showpassword is true then we display SHOW else we display Not show */}
             <button
-              {...useLongPress}
-              onMouseDown={(e) => setShowPassword(!showPassword)}
+              // {...useLongPress}
+              onClick={(e) => setShowPassword(!showPassword)}
             >
               Show / Hide password
             </button>
